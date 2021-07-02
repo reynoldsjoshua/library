@@ -85,10 +85,7 @@ class BookManagementTest extends TestCase
     {
         $this->withoutExceptionHandling();
 
-        $this->post('/books', [
-            'title' => 'Cool Title',
-            'author_id' => 'Josh',
-        ]);
+        $this->post('/books', $this->data());
 
         $book = Book::first();
         $author = Author::first();
